@@ -38,7 +38,7 @@ To find which batch a skin is in, check the releases page:
 https://github.com/nothing17777/3d---lol--models/releases
 
 Example direct URL:
-https://github.com/nothing17777/3d---lol--models/releases/download/models-v1/266000.glb
+https://github.com/nothing17777/3d---lol--models/releases/download/models-v1/1000.glb
 
 ## Skin ID Format
 
