@@ -10,35 +10,28 @@ sourced under Riot Games' "Legal Jibber Jabber" fan content policy.
 - Format: GLB (GL Transmission Format Binary)
 - Models organized across 11 release batches (models-v1 through models-v11)
 
-## Skin Data
+## Files
 
-`skins.json` is included in this repo and maps every skin ID to its champion and skin name.
-
-```json
-[
-  {
-    "skin_id": "266000",
-    "champion": "Aatrox",
-    "slug": "aatrox",
-    "skin_name": "Aatrox",
-    "glb_file": "266000.glb"
-  }
-]
-```
+- `skins.json` — maps every skin ID to champion name, skin name, and slug
+- `batch_lookup.json` — maps every skin ID to its release batch number (1-11)
 
 ## Usage
 
-Models are release assets split across 11 batches (models-v1 to models-v11).
-Check the [releases page](https://github.com/nothing17777/3d---lol--models/releases)
-to find which batch contains your skin.
+Models are release assets split across 11 batches. Use `batch_lookup.json` to find
+which batch a skin is in, then construct the download URL:
 
-**Download via terminal:**
 ```bash
-curl -L "https://github.com/nothing17777/3d---lol--models/releases/download/models-v1/1000.glb" -o "1000.glb"
+curl -L "https://github.com/nothing17777/3d---lol--models/releases/download/models-v{batch}/{skin_id}.glb" -o "{skin_id}.glb"
+```
+
+Example — download base Aatrox (batch 5):
+```bash
+curl -L "https://github.com/nothing17777/3d---lol--models/releases/download/models-v5/266000.glb" -o "266000.glb"
 ```
 
 **Note:** GitHub release URLs have CORS restrictions and cannot be loaded
-directly in web apps. Use a proxy such as a Cloudflare Worker.
+directly in browser web apps. Use a Cloudflare Worker proxy to serve models
+to a frontend.
 
 ## Skin ID Format
 
